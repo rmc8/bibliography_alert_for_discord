@@ -1,0 +1,35 @@
+version: 2
+jobs:
+    pep8_check:
+        working_directory: ~/bibliography_alert_for_discord
+        docker:
+            - image: circleci/python:latest
+        steps:
+            - checkout
+            - run:
+                  name: Install flake8
+                  command: sudo pip install flake8
+            - run:
+                  name: PEP8 Check
+                  command: flake8 --max-complexity 10
+    run_tests:
+        working_directory: ~/bibliography_alert_for_discord
+        docker:
+            - image: circleci/python:latest
+        steps:
+            - checkout
+            - run:
+                  name: Install Dependencies
+                  command: |
+                      sudo pip install pytest
+                      sudo pip install -r requirements.txt
+            - run:
+                  name: Run Tests
+                  command: pytest tests/
+
+workflows:
+    version: 2
+    test_and_lint:
+        jobs:
+            - pep8_check
+            - run_tests

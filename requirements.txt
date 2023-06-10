@@ -1,0 +1,7 @@
+requests
+lxml
+bs4
+pandas
+discord
+pytest
+pyyaml

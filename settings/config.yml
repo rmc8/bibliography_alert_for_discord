@@ -1,0 +1,13 @@
+version: 2.1
+settings:
+  api:
+    keywords:
+      - Python
+      - JavaScript
+      - Rust
+      - Svelte
+    params:
+      - title
+      - description
+  discord:
+    webhook_url: https://discord.com/api/webhooks/1116909225529069628/Uu1W0iTWQuCcOUPRxbNYAMoBLCAzhA9YcECfdVeAne_uKNlJOKAqLdJsH2d-NRHXAPjl
