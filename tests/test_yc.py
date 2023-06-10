@@ -18,6 +18,8 @@ class TestYamlConfig(TestCase):
         mock_exists.return_value = True
         config = YamlConfig("./settings/config.yml")
         data = config.load()
+        test_data = {"version": data.get("version")}
+        self.assertEqual(test_data, {"version": 2.1})
 
     @patch("yaml.dump")
     @patch("builtins.open", new_callable=mock_open)

@@ -4,6 +4,7 @@ from sqlite3 import Error, Connection
 from functools import wraps
 from typing import Callable
 
+
 class SQLite:
     def __init__(self, db_path: str):
         self.conn = self.connect(db_path)
